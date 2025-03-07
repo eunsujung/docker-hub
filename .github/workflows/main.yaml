@@ -42,7 +42,7 @@ jobs:
     - name: Add date and push
       run: |
         GIT_HASH=$(git rev-parse --short "$GITHUB_SHA")
-        10sed -i "16s|.*|      - image: $DOCKER_REPOSITORY:$GIT_HASH|g" deployment.yaml
+        sed -i "16s|.*|      - image: $DOCKER_REPOSITORY:$GIT_HASH|g" deployment.yaml
         git add .
         git config --global user.email "github-actions@github.com"
         git config --global user.name "github-actions"
